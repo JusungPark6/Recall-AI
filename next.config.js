@@ -4,7 +4,9 @@ const nextConfig = {
     return [
       {
         source: '/api/:path*',
-        destination: 'http://localhost:8000/:path*', // Adjust port if different
+        destination: process.env.NODE_ENV === 'development' 
+          ? 'http://localhost:8000/:path*'
+          : process.env.NEXT_PUBLIC_API_URL + '/:path*',
       },
     ]
   },
