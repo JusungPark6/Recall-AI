@@ -1,22 +1,11 @@
 {
-  "framework": "nextjs",
-  "rewrites": [
-    { 
-      "source": "/((?!api/.*).*)",
-      "destination": "/index.html"
-    },
-    {
-      "source": "/api/(.*)",
-      "destination": "/api/$1"
-    }
+  "version": 2,
+  "builds": [
+    { "src": "next.config.js", "use": "@vercel/next" },
+    { "src": "api/**/*.py", "use": "@vercel/python" }
   ],
-  "buildCommand": "next build",
-  "outputDirectory": ".next",
   "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/$1",
-      "continue": true
-    }
+    { "src": "/api/(.*)", "dest": "/api/$1.py" },
+    { "src": "/(.*)", "dest": "/$1" }
   ]
 }
