@@ -1,11 +1,17 @@
 {
   "version": 2,
   "builds": [
-    { "src": "next.config.js", "use": "@vercel/next" },
-    { "src": "api/**/*.py", "use": "@vercel/python" }
+    { "src": "api/**/*.py", "use": "@vercel/python", "config": { "runtime": "python3.9" } }
   ],
   "routes": [
-    { "src": "/api/(.*)", "dest": "/api/$1.py" },
+    { 
+      "src": "/api/(.*)", 
+      "dest": "/api/main.py",
+      "methods": ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+      "headers": {
+        "Access-Control-Allow-Origin": "*"
+      }
+    },
     { "src": "/(.*)", "dest": "/$1" }
   ]
 }

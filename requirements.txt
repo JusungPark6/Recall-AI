@@ -1,0 +1,26 @@
+# Core dependencies
+fastapi==0.104.1
+python-multipart==0.0.6
+pydantic>=2.9.0,<3.0.0  # Updated for ollama compatibility
+uvicorn==0.24.0
+
+# HTTP client
+httpx>=0.27.0,<0.28.0  # Updated for ollama compatibility
+
+# Database and processing
+chromadb==0.4.18
+numpy==1.24.3
+requests==2.31.0
+
+# LangChain
+langchain-community==0.0.13
+# langchain-core==0.0.10
+
+# PDF processing
+pymupdf==1.23.8
+
+# Environment variables
+python-dotenv==1.0.0
+
+# Ollama
+ollama==0.4.5

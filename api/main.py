@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 import os
 import tempfile
 import ollama
-import streamlit as st
+# import streamlit as st
 import chromadb
 from chromadb.utils.embedding_functions.ollama_embedding_function import OllamaEmbeddingFunction
 from langchain_community.document_loaders import PyMuPDFLoader
@@ -131,7 +131,8 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # Next.js dev server
+    # allow_origins=["http://localhost:3000"],  # Next.js dev server
+    allow_origins=["https://recall-ai-app.vercel.app"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

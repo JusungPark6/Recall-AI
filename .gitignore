@@ -1,6 +1,6 @@
 # Dependencies
 /node_modules
-/backend/venv
+/api/venv
 __pycache__/
 *.pyc
 
@@ -10,7 +10,8 @@ __pycache__/
 .env.development.local
 .env.test.local
 .env.production.local
-
+venv/
+api/venv
 # Build outputs
 /.next/
 /out/
@@ -28,3 +29,5 @@ yarn-error.log*
 *.swp
 *.swo
 
+.vercel
+.env*.local
