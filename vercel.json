@@ -1,22 +1,22 @@
 {
   "version": 2,
-  "builds": [
-    { "src": "api/*.py", "use": "@vercel/python", "config": { "runtime": "python-3.9" } }
-  ],
+  "functions": {
+    "api/**": {
+      "runtime": "python3.9",
+      "memory": 1024,
+      "maxDuration": 10,
+      "excludeFiles": "{.next,*.cache,node_modules,public,app}/**"
+    }
+  },
   "routes": [
     { 
       "src": "/api/(.*)", 
-      "dest": "/api/main.py",
+      "dest": "api/main.py",
       "methods": ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
       "headers": {
         "Access-Control-Allow-Origin": "*"
       }
     },
     { "src": "/(.*)", "dest": "/$1" }
-  ],
-  "functions": {
-    "api/**": {
-      "excludeFiles": "{.next,*.cache,node_modules,public,app}/**"
-    }
-  }
+  ]
 }
