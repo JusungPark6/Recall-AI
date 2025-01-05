@@ -1,23 +1,23 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   async rewrites() {
-    if (process.env.VERCEL_ENV === 'production') {
-      return [
-        {
-          source: '/api/:path*',
-          destination: '/api/main.py',
-        },
-      ];
-    }
-    else {
-      return [
-        {
-          source: '/api/:path*',
-          destination: '/api/main.py',
-        },
-      ];
-    }
+    return [
+      {
+        source: '/api/:path*',
+        destination: 'https://recall-ai-app.vercel.app/api/:path*',
+      },
+    ]
   },
+  experimental: {
+    outputFileTracing: true,
+    outputFileTracingIncludes: {
+      '/api': [
+        'main.py',      // main backend function
+        'requirements.txt',  // Dependencies
+        '**'            // Any other files in api directory
+      ]
+    }
+  }
 }
 
 module.exports = nextConfig 

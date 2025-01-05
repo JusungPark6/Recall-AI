@@ -1,0 +1,27 @@
+# .vercelignore
+
+# Exclude virtual environment
+venv/
+
+# Exclude tests and documentation
+tests/
+docs/
+
+# Exclude local environment files
+*.env
+
+# Exclude media and assets not needed by the function
+media/
+assets/
+
+# Exclude version control directories
+.git/
+.github/
+
+# Exclude Docker files
+Dockerfile
+docker-compose.yml
+
+# Exclude Node modules (if not needed)
+node_modules/
+
