@@ -5,7 +5,7 @@
       "runtime": "@vercel/python@4.3.0",
       "memory": 1024,
       "maxDuration": 10,
-      "excludeFiles": "{.next,*.cache,node_modules,public,app}/**"
+      "excludeFiles": "{.next,*.cache,node_modules,public,app,tests,docs,*.md,*.txt,*.log,*.lock,*.json,*.js,*.ts,*.tsx,*.css,*.html,__pycache__,*.pyc,venv,*.git*,*.env*,*.vercel*,*.idea,*.vscode,media,assets,Dockerfile,docker-compose*,*.yml,*.yaml}/**"
     }
   },
   "routes": [
