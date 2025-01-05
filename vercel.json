@@ -2,7 +2,7 @@
   "version": 2,
   "functions": {
     "api/**": {
-      "runtime": "python3.9",
+      "runtime": "@vercel/python@3.9",
       "memory": 1024,
       "maxDuration": 10,
       "excludeFiles": "{.next,*.cache,node_modules,public,app}/**"
