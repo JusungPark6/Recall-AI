@@ -14,10 +14,10 @@ interface QuizQuestion {
 
 const getApiUrl = () => {
   if (process.env.VERCEL_ENV === 'production') {
-    return 'https://recall-ai-app.vercel.app/api';
+    return 'https://recall-ai-app.vercel.app/';
   }
   else {
-    return 'http://localhost:8000/api';
+    return 'http://localhost:8000/';
   }
 };
 
@@ -41,7 +41,7 @@ export default function Home() {
     formData.append('file', file);
 
     try {
-      const response = await fetch(`${getApiUrl()}/upload`, {
+      const response = await fetch(`http://localhost:8000/upload`, {
         method: 'POST',
         body: formData,
       });
@@ -75,7 +75,7 @@ export default function Home() {
 
     setLoading(true);
     try {
-      const response = await fetch(`${getApiUrl()}/prompt`, {
+      const response = await fetch(`http://localhost:8000/prompt`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -104,7 +104,7 @@ export default function Home() {
     setShowExplanation({});
     
     try {
-      const response = await fetch(`${getApiUrl()}/quiz`, {
+      const response = await fetch(`http://localhost:8000/quiz`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
