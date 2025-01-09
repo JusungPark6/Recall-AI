@@ -53,12 +53,10 @@ This tool is ideal for students, professionals, or anyone looking to retain know
   ```
 2. **Frontend Setup**:
   ```bash
-  Copy code
   npm install
   ```
 3. **Backend Setup**:
   ```bash
-  Copy code
   cd api
   python -m venv venv
   source venv/bin/activate  # On Windows: venv\Scripts\activate
@@ -68,14 +66,12 @@ This tool is ideal for students, professionals, or anyone looking to retain know
 
 Frontend:
 ```bash
-Copy code
 cd ..
 npm run dev
 ```
 Backend:
-```bash
 Copy code
 cd api
-python main.py
+uvicorn main:app --reload
 ```
 Access the Application: Open your browser and navigate to http://localhost:3000 to use Recall AI.
